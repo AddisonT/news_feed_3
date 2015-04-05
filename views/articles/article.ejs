@@ -1,14 +1,24 @@
 <!--views/articles/index.ejs-->
 <!DOCTYPE HTML>
 <html>
+<link rel="stylesheet" href="/style.css">
 <body>
-<h1>Article: <%= articleToDisplay.title %></h1>
+<h1>Article: <%= art.title %></h1>
 <div>
-  <ul>
-  	<li>Author: <%= articleToDisplay.author  %></li>
-  	<li>Content: <%= articleToDisplay.content  %></li>
-  </ul>
+  <div>
+  	<h2>By: <%= art.author  %></h2>
+  	<p>Content: <%= art.content  %></p>
+  </div>
 </div>
+<div><a href="/articles">Go to Articles Page</a></div>
+</br>
+	<form action="/articles/<%= id %>/edit" method="GET">
+		<button type="submit" class="button">Edit Article</button>
+	</form>
+	</br>
+    <form method="POST" action="/articles/<%= id %>?_method=DELETE">
+    	<button type="submit" class="button">Delete Article</button>
+    </form>
 </body>
 </html>
 

@@ -1,9 +1,15 @@
 <!--views/articles/index.ejs-->
 <!DOCTYPE HTML>
 <html>
+<link rel="stylesheet" href="/style.css">
+
 <body>
 <h1>Articles index</h1>
-<% articlesList.forEach(function(article) { %>
+			<a href="/">Main Page</a>
+		</br>
+		</br>
+
+		<% articlesList.forEach(function(article) { %>
 <div>
   <a href="/articles/<%= article.id %>"><%= article.title %></a>
   <div>
@@ -11,6 +17,13 @@
   </div>
 </div>
 <% }) %>
+</br>
+<div>
+	<form action="/articles/new" method="GET">
+		<button type="submit" class="button">Create New Article</button>
+	</form>
+</br>
+</div>
 </body>
 </html>
 
